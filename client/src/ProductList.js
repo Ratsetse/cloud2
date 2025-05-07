@@ -5,13 +5,13 @@ function ProductList({ canDelete = false }) {
     const [products, setProducts] = useState([]);
 
     const fetchProducts = async () => {
-        const res = await fetch('http://localhost:5000/api/products');
+        const res = await fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/products');
         const data = await res.json();
         setProducts(data);
     };
 
     const handleDelete = async (id) => {
-        await fetch(`http://localhost:5000/api/products/${id}`, { method: 'DELETE' });
+        await fetch(`https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/products/${id}`, { method: 'DELETE' });
         fetchProducts();
     };
 

@@ -17,7 +17,7 @@ function AddProductForm({ onProductAdded }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch('http://localhost:5000/api/products', {
+        const res = await fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/products', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form)

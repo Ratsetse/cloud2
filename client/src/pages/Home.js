@@ -6,7 +6,7 @@ function Home() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/products')
             .then((res) => res.json())
             .then((data) => {
                 console.log('📦 Products from backend:', data);

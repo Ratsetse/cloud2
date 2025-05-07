@@ -12,14 +12,14 @@ function PurchaseForm() {
 
     // Load products
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
 
     // Load purchases
     useEffect(() => {
-        fetch('http://localhost:5000/api/purchases')
+        fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/purchases')
             .then(res => res.json())
             .then(data => setPurchases(data));
     }, []);
@@ -30,7 +30,7 @@ function PurchaseForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch('http://localhost:5000/api/purchases', {
+        const res = await fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/purchases', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form)
@@ -41,7 +41,7 @@ function PurchaseForm() {
             setForm({ productId: '', customerName: '', quantity: 1 });
 
             // Refresh purchases
-            const updated = await fetch('http://localhost:5000/api/purchases');
+            const updated = await fetch('https://obscure-potato-jj75w9w5gww7fp5r4-5000.app.github.dev/api/purchases');
             const updatedData = await updated.json();
             setPurchases(updatedData);
         } else {
